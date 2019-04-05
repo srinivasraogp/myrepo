@@ -1,0 +1,72 @@
+Step 1: Create a local git repository 
+	To initialize a git repository in the root of the folder, run the git init command:  
+
+
+Step 2: Add a new file to the repo
+	mnelson:myproject mnelson$ touch mnelson.txt
+	mnelson:myproject mnelson$ ls
+	mnelson.txt	
+
+After creating the new file, you can use the git status command to see which files git knows exist.
+	mnelson:myproject mnelson$ git status
+	On branch master
+
+	Initial commit
+
+	Untracked files:
+  	(use "git add <file>..." to include in what will be committed)
+
+	mnelson.txt
+
+	nothing added to commit but untracked files present (use "git add" to track)
+
+Step 3: Add a file to the staging environment
+	
+	To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the git add <filename> command
+
+Step 4: Create a commit	
+	you can then tell git to package them into a commit using the git commit command. 
+	Run the command git commit -m "Your message about the commit"
+	
+	mnelson:myproject mnelson$ git commit -m "This is my first commit!"
+	[master (root-commit) b345d9a] This is my first commit!
+ 	1 file changed, 1 insertion(+)
+ 	create mode 100644 mnelson.txt
+
+git-merge - Join two or more development histories together
+
+
+git merge --abort will abort the merge process and try to reconstruct the pre-merge state.
+
+	can only be run after the merge has resulted in conflicts. 
+
+git merge --continue 
+	git merge --continue
+
+HOW CONFLICTS ARE PRESENTED
+	The area where a pair of conflicting changes happened is marked with markers <<<<<<<, =======, and >>>>>>>. The part before the ======= is typically your side, and the part afterwards is typically their side.
+
+HOW TO RESOLVE CONFLICTS
+	git merge --abort
+	Resolve the conflicts. Git will mark the conflicts in the working tree. Edit the files into shape and git add them to the index. Use git commit or git merge --continue to seal the deal.
+
+Merge branches fixes and enhancements on top of the current branch
+	$ git merge fixes enhancements
+
+Step 5: Create a new branch
+
+	 git checkout -b <my branch name>. 
+
+	This command will automatically create a new branch and then 'check you out' on it, meaning git will move you to that branch, off of the master branch.
+
+	After running the above command, you can use the git branch command to confirm that your branch was created:
+
+	mnelson:myproject mnelson$ git branch
+  	master
+	* my-new-branch
+
+
+
+
+	
+
